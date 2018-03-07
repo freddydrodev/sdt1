@@ -1,6 +1,6 @@
 <?php
 $sent = false;
-if(isset($_POST['login']))
+if(isset($_POST['login']) && !isset($_COOKIE['login_error']))
 {
     include 'php/includes/func.php';
 
@@ -26,4 +26,5 @@ if(isset($_POST['login']))
         bootstrapNotify('Empty field(s)');
         $sent = true;
     }
+    setcookie('attempts', $_COOKIE['attempts'] + 1, time() + (15));
 }
