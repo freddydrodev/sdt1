@@ -2,6 +2,7 @@
 $page = 'Account';
 $lvl = 2;
 include 'php/includes/head.php';
+include 'php/scripts/password.php';
 include 'php/includes/navbar.php';
 ?>
 <!-- body -->

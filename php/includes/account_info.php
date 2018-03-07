@@ -1,5 +1,5 @@
 <div class="bg-white p-3 rounded box">
-    <h2>Personal Informations</h2>
+    <h2><?php echo $info ?></h2>
     <form action="account.php" method="post">
         <div class="form-group">
             <div class="input-group">

@@ -31,3 +31,5 @@
     </ul>
   </div>
 </nav>
+
+<?php include 'php/includes/user.php' ?>
