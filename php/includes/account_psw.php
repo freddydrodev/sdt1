@@ -4,19 +4,19 @@
         <div class="form-group">
             <div class="input-group">
                 <span class="input-group-addon pr-4 pl-0 border-0 bg-white"><i class="flaticon-key"></i></span>
-                <input type="password" value="<?php echo '' ?>" name="c-psw" class="form-control border-0 pl-0" placeholder="Current Password" title="Password" required>
+                <input type="password" name="c-psw" class="form-control border-0 pl-0" placeholder="Current Password" title="Password" required>
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <span class="input-group-addon pr-4 pl-0 border-0 bg-white"><i class="flaticon-key"></i></span>
-                <input type="password" value="<?php echo '' ?>" name="psw" class="form-control border-0 pl-0" placeholder="New Password" title="Password" required>
+                <input type="password" name="psw" class="form-control border-0 pl-0" placeholder="New Password" title="Password" required>
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <span class="input-group-addon pr-4 pl-0 border-0 bg-white"><i class="flaticon-key"></i></span>
-                <input type="password" value="<?php echo '' ?>" name="con" class="form-control border-0 pl-0" placeholder="Retype New Password" title="Retype Password" required>
+                <input type="password" name="con" class="form-control border-0 pl-0" placeholder="Retype New Password" title="Retype Password" required>
             </div>
         </div>
         <div class="form-group">
