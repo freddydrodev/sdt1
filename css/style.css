@@ -2,6 +2,11 @@ html, body {
     height: 100%;
 }
 
+body {
+    background: #F3F4F7;
+    color: #54505C;
+}
+
 h1 {
     font-size: 4rem;
     font-weight: 100;
@@ -14,4 +19,43 @@ h3 {
 
 button {
     cursor: pointer;
+}
+a, a:hover {
+    color: #934AFF;
+}
+.logform {
+    width: 300px;
+    padding: 15px 0;
+}
+
+.logform .input-group {
+    box-shadow: 0 3px 10px rgba(0,0,0,.08);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.logform .input-group .form-control {
+    padding: 10px;
+    color: #8F8A95;
+    font-size: 14px;
+}
+
+.logform .input-group .input-group-addon {
+    color: #A063FB;
+}
+
+.logform .input-group .form-control:focus {
+    box-shadow: none;
+}
+
+.btn-primary {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .15);
+    background-color: #934AFF;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #9F62FF;
+}
+.btn-primary:focus {
+    background-color: #CAA9FF;
 }
