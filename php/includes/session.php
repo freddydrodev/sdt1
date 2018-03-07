@@ -8,3 +8,8 @@ if(isset($page)) {
         header('location: login.php');
     }
 }
+
+if(isset($_COOKIE['login_error']) && isset($_SESSION['id'])) {
+    setcookie('login_error', 0, time());
+    setcookie('attempts', 0, time());
+}

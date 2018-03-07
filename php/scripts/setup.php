@@ -5,7 +5,6 @@ if(isset($_POST['setup'])) {
         $host = 'localhost';
         $user = 'root';
         $psw = '';
-        $db = 'std1';
 		//connection to mysql
 
 		$dbh = new PDO("mysql:host=$host", $user, $psw);
