@@ -1,8 +1,8 @@
 <?php 
 $page = 'Account';
-$lvl = 1;
+$lvl = 2;
 include 'php/includes/head.php';
-include 'php/scripts/update.php';
+include 'php/scripts/password.php';
 include 'php/includes/navbar.php';
 ?>
 <!-- body -->
@@ -17,7 +17,7 @@ include 'php/includes/navbar.php';
                     <?php include 'php/includes/account_menu.php' ?>
                 </div>
                 <div class="col-9">
-                    <?php include 'php/includes/account_info.php' ?>
+                    <?php include 'php/includes/account_psw.php' ?>
                 </div>
             </div>
         </div>
