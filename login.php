@@ -19,7 +19,7 @@ if(isset($_COOKIE['attempts'])){
         }
     } else {
         $waiting = true;
-        $remain = $_COOKIE['login_error'] - time() + 2;
+        $remain = $_COOKIE['login_error'] - time();
         header('refresh:' . $remain . ';url=login.php');
     }
 } else {

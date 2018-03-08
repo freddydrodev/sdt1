@@ -1,7 +1,7 @@
 <?php
 session_start();
 session_destroy();
-$db = 'std2';
+$db = 'std1';
 try {
     $db = new PDO('mysql:host=localhost;dbname=' . $db, 'root', '');
     header('location: login.php');
