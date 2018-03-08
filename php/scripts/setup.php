@@ -86,6 +86,12 @@ if(isset($_POST['setup'])) {
             FOREIGN KEY(madeby) REFERENCES customers(id) ON DELETE CASCADE ON UPDATE CASCADE,
             FOREIGN KEY(madeon) REFERENCES forumtopics(id) ON DELETE CASCADE ON UPDATE CASCADE
         )');
+        
+        //create visits
+		$dbh->exec('CREATE TABLE IF NOT EXISTS visits (
+            id int(11) PRIMARY KEY AUTO_INCREMENT,
+            date DATETIME not null
+        )');
 
         echo '
             <p class="alert bg-success text-white"><span class="glyphicon glyphicon-warning-sign"></span>Database created successfully, Redirecting !!!</p>';
