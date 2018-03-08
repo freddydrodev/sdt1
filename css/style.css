@@ -30,6 +30,18 @@ a, a:hover {
     width: 300px;
     padding: 15px 0;
 }
+.small-icon:before {
+    font-size: inherit !important;
+}
+
+.icon-hover {
+    opacity: 0;
+    transition: all linear .2s;
+}
+
+.input-group:hover .icon-hover {
+    opacity: 1;
+}
 .box {
     box-shadow: 0 3px 15px rgba(0, 0, 0, .05);
 }
@@ -75,6 +87,7 @@ a, a:hover {
 
 .navbar {
     box-shadow: 0 3px 10px rgba(0, 0, 0, .15);
+    height: 60px;
 }
 .navbar-nav .nav-link {
     line-height: 1em;
@@ -96,4 +109,10 @@ a, a:hover {
     background-color: #F9F9F9;
     border-right: 4px #934AFF solid;
     color: #934AFF;
+}
+
+/* Home */
+#scroller {
+    height: 80%;
+    overflow: hidden;
 }

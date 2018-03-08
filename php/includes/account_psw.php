@@ -3,7 +3,7 @@
     <form action="password.php" method="post">
         <div class="form-group">
             <div class="input-group">
-                <span class="input-group-addon pr-4 pl-0 border-0 bg-white"><i class="flaticon-key"></i></span>
+                <span class="input-group-addon pr-4 pl-0 border-0 bg-white"><i class="flaticon-shield"></i></span>
                 <input type="password" name="c-psw" class="form-control border-0 pl-0" placeholder="Current Password" title="Password" required>
             </div>
         </div>

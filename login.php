@@ -1,8 +1,6 @@
 <?php 
-if(!isset($_COOKIE['attempts'])) {
-    setcookie('attempts', 0, time() + (15));
-    header('location: login.php');
-}
+$time = 20;
+setcookie('attempts', isset($_COOKIE['attempts']) ? $_COOKIE['attempts'] : 0, time() + $time);
 
 $page = 'Login Page';
 include 'php/includes/head.php';
@@ -10,18 +8,24 @@ include 'php/scripts/login.php';
 
 $cookie_name = 'login_error';
 $waiting = false;
-$time = 60 * 5;
 $remain = 0;
-if(!isset($_COOKIE['login_error'])) {
-    if($_COOKIE['attempts'] >= 1) {
-        setcookie($cookie_name, time() + ($time), time() + ($time)); // 60sec * 5
-        setcookie('attempts', 0, time() + ($time));
+
+if(isset($_COOKIE['attempts'])){
+    if(!isset($_COOKIE['login_error'])) {
+        if($_COOKIE['attempts'] + 1 >= 3) {
+            setcookie($cookie_name, time() + $time, time() + $time); // 60sec * 5
+            setcookie('attempts', 0, time() + $time);
+            header('location: login.php');
+        }
+    } else {
+        $waiting = true;
+        $remain = $_COOKIE['login_error'] - time() + 2;
+        header('refresh:' . $remain . ';url=login.php');
     }
 } else {
-    $waiting = true;
-    $remain = $_COOKIE['login_error'] - time() + 2;
-    header('refresh:' . $remain . ';url=login.php');
+    header('location: login.php');
 }
+
 ?>
 <div class="container-fluid h-100">
     <div class="row h-100">

@@ -26,5 +26,6 @@ if(isset($_POST['login']) && !isset($_COOKIE['login_error']))
         bootstrapNotify('Empty field(s)');
         $sent = true;
     }
+    
     setcookie('attempts', $_COOKIE['attempts'] + 1, time() + (15));
 }

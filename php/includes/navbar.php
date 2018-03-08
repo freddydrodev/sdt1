@@ -32,4 +32,6 @@
   </div>
 </nav>
 
-<?php include 'php/includes/user.php' ?>
+<?php 
+include 'php/includes/user.php' ;
+?>

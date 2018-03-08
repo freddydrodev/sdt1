@@ -12,7 +12,7 @@ include 'php/includes/session.php';
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/flatpickr.min.css">
     <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/std1/flaticon.css">
+    <link rel="stylesheet" href="css/std1_3/flaticon.css">
     <link rel="stylesheet" href="css/style.css">
     <title><?php echo isset($page) ? $page : 'Spencer Animal Shelter' ?></title>
     <script src="js/jquery.min.js"></script>
