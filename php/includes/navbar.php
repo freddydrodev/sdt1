@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-primary box">
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-primary box">
   <a class="navbar-brand text-white" href="#"><strong title="Spencer Animal Shelter">SAS</strong></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@
     </ul>
   </div>
 </nav>
-
+<div class="spacer"></div>
 <?php 
 include 'php/includes/user.php' ;
 ?>

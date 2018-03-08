@@ -116,3 +116,7 @@ a, a:hover {
     height: 80%;
     overflow: hidden;
 }
+.spacer {
+    height: 60px;
+    width: 100%;
+}

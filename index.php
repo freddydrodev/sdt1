@@ -47,8 +47,7 @@ include 'php/includes/home_inc.php';
                 </div>
                 <div class="col-12">
                     <div class="box bg-success text-white p-3 my-3">
-                        <h6><span class="flaticon-charity mr-2"></span>Donations</h6>
-                        <h3>$400</h3>
+                        <?php include 'php/includes/donation.php'; ?>
                     </div>
                 </div>
             </div>
