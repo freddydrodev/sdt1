@@ -1,15 +1,18 @@
 <?php 
 $page = 'Forum';
 include 'php/includes/head.php';
+include 'php/scripts/forum.php';
 include 'php/includes/navbar.php';
 ?>
 <!-- body -->
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h2 class="my-3 d-flex justify-content-between">Forum
-                <small><a href="#" class="btn btn-primary btn-sm"><span class="small-icon flaticon-plus-symbol mr-2"></span>Add New Topic</a></small>
-            </h2>
+            
+            <div class="d-flex py-3 justify-content-between align-items-center">
+                <h2 class="my-0">Forum</h2>
+                <?php include './php/includes/forum_add.php'; ?>
+            </div>
         </div>
         <div class="col">
             <div class="row">
@@ -19,23 +22,24 @@ include 'php/includes/navbar.php';
                     </div>
                     <div class="topics-list">
                         <?php 
-                        $i = 0;
-                        while($i < 4) { ?>
+                        $topics = $db->query('SELECT * FROM forumtopics ORDER BY createdat DESC');
+                        while($topic = $topics->fetch()) { ?>
                         <div class="box p-3 bg-white my-3 topic">
                             <div class="d-flex justify-content-between">
-                                <h5><a href="#">Topic Title</a></h5>
-                                <p>Created: 21 Dec 2017</p>
+                                <h5><a href="topic.php?id=<?php echo $topic['id'] ?>"> <?php echo $topic['title'] ?></a></h5>
+                                <p class="date-<?php echo $topic['id'] ?>"></p>
+                                <script>
+                                jQuery(document).ready(function(){
+                                    $('.date-<?php echo $topic['id'] ?>').text(moment("<?php echo $topic['createdat'] ?>").from());
+                                })
+                                </script>
                             </div>
                             <p class="mb-0">
                                 Messages: <b>1200, </b> 
-                                Accessories: <b>rugs, baskets, toys</b>
-                                Gift: <b>something or yes ?</b>
+                                Type: <b><?php echo $topic['status'] ?></b>
                             </p>
                         </div>
-                        <?php
-                            $i++;
-                        }
-                        ?>
+                        <?php } ?>
                         
                     </div>
                 </div>

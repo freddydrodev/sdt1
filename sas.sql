@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS forumtopics (
   description varchar(200) NOT NULL,
   madeby int(11) NOT NULL,
   createdat datetime NOT NULL,
-  status enum('open','closed') NOT NULL,
+  status enum('private','public') NOT NULL,
   FOREIGN KEY(madeby) REFERENCES customers(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
