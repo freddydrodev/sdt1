@@ -40,7 +40,6 @@ include 'php/includes/navbar.php';
                             </p>
                         </div>
                         <?php } ?>
-                        
                     </div>
                 </div>
                 <div class="col-3">

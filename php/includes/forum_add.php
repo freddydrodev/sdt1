@@ -20,10 +20,10 @@
                         <input type="text" value="<?php echo $sent ? $_POST['title'] : '' ?>" name="title" class="form-control form-control-lg" placeholder="Topic Title" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="description" class="form-control form-control-lg"><?php echo $sent ? $_POST['description'] : 'description' ?></textarea>
+                        <textarea name="description" class="form-control form-control-lg" required><?php echo $sent ? $_POST['description'] : 'description' ?></textarea>
                     </div>
                     <div class="form-group">
-                        <select name="type" class="custom-select form-control form-control-lg">
+                        <select name="type" class="custom-select form-control form-control-lg" required>
                             <option selected>Select Topic Type</option>
                             <option value="public">Public</option>
                             <option value="private">Private</option>
@@ -33,7 +33,6 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" name="create" class="btn btn-primary">Create</button>
-                
                 </div>
             </form>
         </div>
