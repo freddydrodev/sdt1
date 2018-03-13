@@ -26,14 +26,18 @@ include 'php/includes/navbar.php';
                         </div>
                         <h6 class="w-75"><?php echo $topic['description'] ?></h6>
                         <p class="mb-0">
-                            Messages: <b>1200, </b> 
+                        <?php $counts = $db->prepare('SELECT COUNT(*) AS total FROM forummessages WHERE madeon = ?');
+                            $counts->execute(array($_GET['id']));
+                            $count = $counts->fetch(); ?>
+
+                            Messages: <b><?php echo $count['total'] ?>, </b> 
                             Type: <b><?php echo $topic['status'] ?></b>
                         </p>
                     </div>
                     <div>
                         <ul class="list-unstyled">
                             <?php 
-                            $comments = $db->prepare('SELECT customers.username, customers.id as uid, msg, forummessages.createdat, forummessages.id FROM forummessages INNER JOIN customers ON customers.id = forummessages.madeby WHERE madeon = ?');
+                            $comments = $db->prepare('SELECT customers.username, customers.id as uid, msg, forummessages.createdat, forummessages.id FROM forummessages INNER JOIN customers ON customers.id = forummessages.madeby WHERE madeon = ? ORDER BY createdat DESC');
                             $comments->execute(array($_GET['id']));
                             while($comment = $comments->fetch()) { ?>
                             <li class="media mt-3">
@@ -49,7 +53,7 @@ include 'php/includes/navbar.php';
                             <?php } ?>
                             
                         </ul>
-                        <?php if($topic['status'] !== 'private') { ?>
+                        <?php if($topic['status'] !== 'private' || $topic['madeby'] === $_SESSION['id']) { ?>
                         <form action="topic.php?id=<?php echo $_GET['id'] ?>" method="post">
                             <div class="form-group row align-items-end">
                             <div class="col-9">

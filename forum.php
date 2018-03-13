@@ -35,7 +35,11 @@ include 'php/includes/navbar.php';
                                 </script>
                             </div>
                             <p class="mb-0">
-                                Messages: <b>1200, </b> 
+                            <?php $counts = $db->prepare('SELECT COUNT(*) AS total FROM forummessages WHERE madeon = ?');
+                            $counts->execute(array($topic['id']));
+                            $count = $counts->fetch(); ?>
+
+                            Messages: <b><?php echo $count['total'] ?>, </b> 
                                 Type: <b><?php echo $topic['status'] ?></b>
                             </p>
                         </div>
@@ -43,16 +47,6 @@ include 'php/includes/navbar.php';
                     </div>
                 </div>
                 <div class="col-3">
-                    <div class="box p-3 bg-white mb-3">
-                        <form action="search.php" method="post">
-                            <div class="form-group mb-0">
-                                <div class="input-group">
-                                    <span class="input-group-addon bg-white"><i class="small-icon flaticon-key"></i></span>
-                                    <input type="search" name="search" class="form-control border-left-0 pl-0" placeholder="Search a topic" required>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
                     <div class="box p-3 bg-white">
                         <?php include 'php/includes/rss.php'; ?>
                     </div>
