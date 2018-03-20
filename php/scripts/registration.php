@@ -18,6 +18,14 @@ if(isset($_POST['register'])){
         bootstrapNotify('UserName: Wrong format! must be between 5 and 100 characters alphanumeric');
     }
 
+    $uexist = $db->prepare('SELECT * FROM customers WHERE username = ?');
+    $uexist->execute(array($un));
+    $uex = $uexist->fetch();
+    if (!empty($uex)) { 
+        $correct = false;
+        bootstrapNotify('Username: This username already exist');
+    }
+
     if (!preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", strtolower($em))) {
         $correct = false;
         bootstrapNotify('Email: Wrong format! accepted format is example@domaine.com');
@@ -36,7 +44,7 @@ if(isset($_POST['register'])){
         bootstrapNotify('Postal Adress: Wrong length! must be between 5 and 100 characters');
     }
 
-    if (strlen($cd) < 1) {
+    if (strlen($cd) < 1 || strlen($cd) > 6) {
         $correct = false;
         bootstrapNotify('Postcode: Wrong length! no character entered');
     }
@@ -58,6 +66,7 @@ if(isset($_POST['register'])){
             header('location: account.php');
         }
         else {
+            print_r($_POST);
             bootstrapNotify();
         }
         $add->closeCursor();

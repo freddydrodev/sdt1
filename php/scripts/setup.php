@@ -95,7 +95,7 @@ if(isset($_POST['setup'])) {
 
         echo '
             <p class="alert bg-success text-white"><span class="glyphicon glyphicon-warning-sign"></span>Database created successfully, Redirecting !!!</p>';
-        header('refresh:2;url=login.php');
+        header('refresh:2;url=registration.php');
     }
     catch(PDOException $e)
     {
