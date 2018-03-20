@@ -1,7 +1,7 @@
 <?php
 session_start();
 session_destroy();
-$db = 'error';
+$db = 'sas';
 try {
     $db = new PDO('mysql:host=localhost;dbname=' . $db, 'root', '');
     header('location: login.php');
