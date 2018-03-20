@@ -46,7 +46,7 @@ if(isset($_POST['register'])){
 
     if (strlen($cd) < 1 || strlen($cd) > 6) {
         $correct = false;
-        bootstrapNotify('Postcode: Wrong length! no character entered');
+        bootstrapNotify('Postcode: Wrong length! must be between 1 and 6 characters');
     }
 
     if (strlen($ps) < 6) {
