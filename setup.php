@@ -1,7 +1,7 @@
 <?php
 session_start();
 session_destroy();
-$db = 'std1';
+$db = 'sas';
 try {
     $db = new PDO('mysql:host=localhost;dbname=' . $db, 'root', '');
     header('location: login.php');
@@ -25,7 +25,7 @@ try {
             <div class="col h-100 text-center">
                 <div class="d-flex h-100 align-items-center flex-column justify-content-center">
                     <h1>Setup page</h1>
-                    <h3 class="text-muted mb-5">By clicking setup a database named 'std1' will be generated</h3>
+                    <h3 class="text-muted mb-5">By clicking setup a database named 'sas' will be generated</h3>
                     <div class="w-50 mx-auto">
                         <form action="setup.php" method="post">
                             <?php include 'php/scripts/setup.php' ?>

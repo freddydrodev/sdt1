@@ -36,9 +36,9 @@ if(isset($_POST['register'])){
         bootstrapNotify('Postal Adress: Wrong length! must be between 5 and 100 characters');
     }
 
-    if (strlen($cd) < 1) {
+    if (strlen($cd) < 1 || strlen($cd) > 6) {
         $correct = false;
-        bootstrapNotify('Postcode: Wrong length! no character entered');
+        bootstrapNotify('Postcode: Wrong length! must be between 1 and 6');
     }
 
     if (strlen($ps) < 6) {
@@ -59,6 +59,7 @@ if(isset($_POST['register'])){
         }
         else {
             bootstrapNotify();
+            $sent = true;
         }
         $add->closeCursor();
     }

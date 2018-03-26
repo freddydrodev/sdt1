@@ -1,5 +1,5 @@
 <?php
-function bootstrapNotify($msg = 'Erreur Inconnue', $type = 'danger'){
+function bootstrapNotify($msg = 'Unknown Error', $type = 'danger'){
   ?>
   <script type="text/javascript">
     $.notify({

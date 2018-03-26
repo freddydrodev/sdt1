@@ -36,13 +36,14 @@ if(isset($_POST['setup'])) {
         //create user table
 		$dbh->exec('CREATE TABLE IF NOT EXISTS pets (
             id int(11) PRIMARY KEY AUTO_INCREMENT,
-            name varchar(50) NOT NULL,
-            description varchar(150) NOT NULL,
-            owner int(11) NOT NULL,
-            type int(11) NOT NULL,
+            pet_name varchar(50) NOT NULL,
+            pet_description varchar(150) NOT NULL,
+            pet_owner int(11) NOT NULL,
+            pet_type int(11) NOT NULL,
+            date_of_birth DATE NOT NULL,
             createdat datetime NOT NULL,
-            FOREIGN KEY(owner) REFERENCES customers(id) ON DELETE CASCADE ON UPDATE CASCADE,
-            FOREIGN KEY(type) REFERENCES pettype(id) ON DELETE CASCADE ON UPDATE CASCADE
+            FOREIGN KEY(pet_owner) REFERENCES customers(id) ON DELETE CASCADE ON UPDATE CASCADE,
+            FOREIGN KEY(pet_type) REFERENCES pettype(id) ON DELETE CASCADE ON UPDATE CASCADE
         )');
 
         //create unique visitors table
@@ -92,6 +93,9 @@ if(isset($_POST['setup'])) {
             id int(11) PRIMARY KEY AUTO_INCREMENT,
             date DATETIME not null
         )');
+        
+        //create default pet types
+		$dbh->exec('INSERT INTO pettype(type) VALUES("Cat"), ("Chicken"), ("Dog"), ("Rabbit"), ("Other")');
 
         echo '
             <p class="alert bg-success text-white"><span class="glyphicon glyphicon-warning-sign"></span>Database created successfully, Redirecting !!!</p>';

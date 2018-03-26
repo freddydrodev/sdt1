@@ -37,13 +37,14 @@ CREATE TABLE IF NOT EXISTS customers (
 DROP TABLE IF EXISTS pets;
 CREATE TABLE IF NOT EXISTS pets (
   id int(11) PRIMARY KEY AUTO_INCREMENT,
-  name varchar(50) NOT NULL,
-  description varchar(150) NOT NULL,
-  owner int(11) NOT NULL,
-  type int(11) NOT NULL,
+  pet_name varchar(50) NOT NULL,
+  pet_description varchar(150) NOT NULL,
+  pet_owner int(11) NOT NULL,
+  pet_type int(11) NOT NULL,
+  date_of_birth DATE NOT NULL,
   createdat datetime NOT NULL,
-  FOREIGN KEY(owner) REFERENCES customers(id) ON DELETE CASCADE ON UPDATE CASCADE,
-  FOREIGN KEY(type) REFERENCES pettype(id) ON DELETE CASCADE ON UPDATE CASCADE
+  FOREIGN KEY(pet_owner) REFERENCES customers(id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY(pet_type) REFERENCES pettype(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- --------------------------------------------------------
@@ -111,7 +112,3 @@ CREATE TABLE IF NOT EXISTS forummessages (
   FOREIGN KEY(madeby) REFERENCES customers(id) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY(madeon) REFERENCES forumtopics(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
-
-
-
-
