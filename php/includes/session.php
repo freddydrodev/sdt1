@@ -1,11 +1,13 @@
 <?php 
 session_start();
 if(isset($page)) {
-    if(($page === 'Registration Page' || $page === 'Login Page') && isset($_SESSION['id'])){
-        header('location: account.php');
-    }
-    if(($page !== 'Registration Page' && $page !== 'Login Page') && !isset($_SESSION['id'])) {
-        header('location: login.php');
+    if($page !== 'Home' && $page !== 'Donation') {
+        if(($page === 'Registration Page' || $page === 'Login Page') && isset($_SESSION['id'])){
+            header('location: account.php');
+        }
+        if(($page !== 'Registration Page' && $page !== 'Login Page') && !isset($_SESSION['id'])) {
+            header('location: login.php');
+        }
     }
 }
 

@@ -5,11 +5,18 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
+    <li class="nav-item <?php echo $page === 'Home' ? 'active' : '' ?>">
+            <a class="nav-link" href="./">Home
+                <?php echo $page === 'Home' ? '<span class="sr-only">(current)</span>' : '' ?>
+            </a>
+        </li>
+        <?php if(isset($_SESSION['id'])) : ?>
         <li class="nav-item <?php echo $page === 'Account' ? 'active' : '' ?>">
             <a class="nav-link" href="account.php">Account
                 <?php echo $page === 'Account' ? '<span class="sr-only">(current)</span>' : '' ?>
             </a>
         </li>
+    <?php endif; ?>
         <li class="nav-item <?php echo $page === 'Donation' ? 'active' : '' ?>">
             <a class="nav-link" href="donation.php">Donation
                 <?php echo $page === 'Donation' ? '<span class="sr-only">(current)</span>' : '' ?>
@@ -20,14 +27,11 @@
                 <?php echo $page === 'Forum' ? '<span class="sr-only"pan>(current)</span>' : '' ?>
             </a>
         </li>
-        <li class="nav-item <?php echo $page === 'Home' ? 'active' : '' ?>">
-            <a class="nav-link" href="./">Home
-                <?php echo $page === 'Home' ? '<span class="sr-only">(current)</span>' : '' ?>
-            </a>
-        </li>
+        <?php if(isset($_SESSION['id'])) : ?>
         <li class="nav-item">
             <a class="nav-link" href="logout.php">Logout</a>
         </li>
+        <?php endif; ?>
     </ul>
   </div>
 </nav>

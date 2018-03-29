@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h3>Nomber Of Visits</h3>
+                <h3>Number Of Visits</h3>
                 <h1><i>0</i></h1>
             </div>
         </div>
