@@ -95,6 +95,10 @@ a, a:hover {
     box-shadow: 0 3px 10px rgba(0, 0, 0, .15);
     height: 60px;
 }
+.navbar-nav {
+    background-color: #934AFF !important;
+    width: 100%;
+}
 .navbar-nav .nav-link {
     line-height: 1em;
     padding: 10px 20px;
@@ -128,4 +132,21 @@ a, a:hover {
 }
 textarea {
     min-height: 100px;
+}
+.card .donate {
+    z-index: 100;
+    right:10px;
+    position: absolute;
+    top: 10px;
+    width: 130px;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: .25s linear all;
+}
+.card:hover .donate {
+    width: 50%;
+    opacity: 1;
+}
+.donation-item {
+    font-weight: 400;
 }
