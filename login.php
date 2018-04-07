@@ -1,5 +1,5 @@
 <?php 
-$time = 20;
+$time = 300;
 setcookie('attempts', isset($_COOKIE['attempts']) ? $_COOKIE['attempts'] : 0, time() + $time);
 
 $page = 'Login Page';
@@ -33,7 +33,7 @@ if(isset($_COOKIE['attempts'])){
             <div class="d-flex h-100 align-items-center justify-content-center flex-column">
                 <h1 class="mb-3">Login Page</h1>
                 <?php if($waiting) { ?> 
-                <p class="wait alert alert-info">You Made 3 concecutive errors you should wait: <strong><?php echo $remain ?>sec</strong></p>
+                <p class="wait alert alert-info">You Made 3 concecutive errors you should wait: <strong>--min --sec</strong></p>
                 <p><a href="registration.php">Not member yet ?</a></p>
                 <?php } else { ?> 
                 <form action="login.php" method="post" class="logform">
@@ -66,7 +66,11 @@ jQuery(document).ready(function() {
     
     var int = setInterval(function(){
         remain--;
-        $('.wait strong').text(remain + 'sec')
+        var min = Math.floor(remain / 60);
+        min = min < 10 ? min === 0 ? '' : '0' + min + 'min ' : min + 'min ';
+        var sec = remain % 60;
+        sec = sec < 10 ? '0' + sec + 'sec' : sec + 'sec';
+        $('.wait strong').text(min + sec);
     }, 1000);
 
     setTimeout(() => {
