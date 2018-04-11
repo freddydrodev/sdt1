@@ -16,12 +16,12 @@
                 <?php echo $page === 'Account' ? '<span class="sr-only">(current)</span>' : '' ?>
             </a>
         </li>
-    <?php endif; ?>
         <li class="nav-item <?php echo $page === 'Donation' ? 'active' : '' ?>">
             <a class="nav-link" href="donation.php">Donation
                 <?php echo $page === 'Donation' ? '<span class="sr-only">(current)</span>' : '' ?>
             </a>
         </li>
+    <?php endif; ?>
         <li class="nav-item <?php echo $page === 'Forum' ? 'active' : '' ?>">
             <a class="nav-link" href="forum.php">Forum
                 <?php echo $page === 'Forum' ? '<span class="sr-only"pan>(current)</span>' : '' ?>
